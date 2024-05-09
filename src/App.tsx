@@ -1,15 +1,16 @@
-import "./App.css";
-import SignUp from "./components/signup/SignUp";
+import React from 'react';
+import SignUp from './components/signup/SignUp'; // Assuming SignUp is also a TypeScript component
 
-function App() {
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline text-red-600">
-        Simple React Typescript Tailwind Sample
-      </h1>
-      <SignUp />
-    </>
-  );
+interface AppProps {
+  // Add any props you expect to pass to the App component here
 }
+
+const App: React.FC<AppProps> = () => {
+  return (
+    <div className="app">
+      <SignUp />
+    </div>
+  );
+};
 
 export default App;
