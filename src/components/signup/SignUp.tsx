@@ -1,18 +1,18 @@
+// SignUp.tsx (assuming minimal changes)
 import React from "react";
 
 interface SignUpProps {
-  onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void; // Optional function for form submission
+  onSuccessfulSignUp?: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const SignUp: React.FC<SignUpProps> = ({ children, onSubmit }) => {
-  // State variables for username and password (optional)
-  // const [username, setUsername] = useState('');
-  // const [password, setPassword] = useState('');
+const SignUp: React.FC<SignUpProps> = ({ onSuccessfulSignUp }) => {
+  // ... (rest of SignUp component logic)
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Handle form submission logic here (e.g., validate data, send to backend)
-    //     console.log('Form submitted:', { username: /* username */, password: /* password */ }); // Replace placeholders with actual values if using state
+    // Simulate successful signup for demonstration
+    onSuccessfulSignUp();
   };
 
   return (
@@ -77,7 +77,7 @@ const SignUp: React.FC<SignUpProps> = ({ children, onSubmit }) => {
           </div>
 
           <footer>
-            <button className="w-full bg-purple-500 text-white font-bold py-2 px-4 rounded text-xl font-family-nunito tracking-[-0.07px] leading-[27.28px] flex items-center justify-center">
+            <button onClick={handleSubmit} className="w-full bg-purple-500 text-white font-bold py-2 px-4 rounded text-xl font-family-nunito tracking-[-0.07px] leading-[27.28px] flex items-center justify-center">
               Sign Up
             </button>
           </footer>
